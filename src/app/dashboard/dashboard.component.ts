@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AsidebarComponent } from '../Asidebar/asidebar/asidebar.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [],
+  imports: [AsidebarComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

@@ -1,0 +1,43 @@
+
+<div class="offcanvas offcanvas-start show" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+  <div class="offcanvas-header">
+    <div class="side-img">
+        <img src="/Images/f-logo.png" class="img-side" alt="Logo" srcset="" >
+        <hr class="hrs">
+    </div>
+    
+  </div>
+  <div class="offcanvas-body">
+
+   <div class="sidebar">
+  <ul class="nav-list">
+    <li *ngFor="let item of sidelistnames; let i = index">
+      
+      
+      <div *ngIf="item.children" class="dropdown">
+        <a  (click)="toggleMenu(i)">
+          <i class="{{ item.sidebarIcon }}"></i>
+          <span>{{ item.sidebarName }}</span>
+        </a>
+        <ul class="child-list" *ngIf="expandedIndex === i">
+          <li *ngFor="let child of item.children">
+            <a [routerLink]="child.route">
+              <i class="{{ child.sidebarIcon }}"></i>
+              <span>{{ child.sidebarName }}</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      
+      <a *ngIf="!item.children" [routerLink]="item.route">
+        <i class="{{ item.sidebarIcon }}"></i>
+        <span>{{ item.sidebarName }}</span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+      
+  </div>
+</div>

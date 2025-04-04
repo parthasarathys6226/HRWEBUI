@@ -1,1 +1,56 @@
-<p>login works!</p>
+<div class="container-fluid">
+    <div class="inner-container">
+
+        <div class="content-box">
+
+            <div class="login-con">
+                <div class="head">
+                    <h4>Login</h4>
+                </div>
+                <div class="forms">
+                    <form action="" [formGroup]="loginForm" (ngSubmit)="login()">
+
+                        <div class="col-4 grp-1">
+                            <Label class="lab">
+                                Username
+                            </Label>
+
+                            <input type="text" class="form-control inp" autocomplete="off" formControlName="username">
+                            <p *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched " 
+                             style="color: red; font-size: 14px;" >
+                                Please enter username
+                            </p>
+                        </div>
+
+                        <div class="col-4 grp-1">
+                            <Label class="lab">
+                                Password
+                            </Label>
+                            <input class="form-control inp" type="password" autocomplete="current-password"  formControlName="password">
+                            <p *ngIf="loginForm.controls['password'].touched && loginForm.controls['password'].invalid" 
+                            style="color: red; font-size: 14px;">Password can't be empty</p>
+
+                        </div>
+                        <div class="btns">
+                            <button type="button" class="col-btn btn btn-danger">Cancel</button>
+                            <button type="submit" class="col-btn btn btn-info">Login</button>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="img-con">
+                <img src="/Images/login-img3.jpg" class="log-img" alt="login image" srcset="">
+            </div>
+
+        </div>
+
+
+
+
+        <!-- <hr class="hrtop"> -->
+
+    </div>
+</div>
